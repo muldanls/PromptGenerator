@@ -36,235 +36,109 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             width: 100%;
-            max-width: 750px;
+            max-width: 850px;
         }
 
-        h2 {
-            margin-top: 0;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 8px;
-        }
+        h2 { margin-top: 0; font-weight: 600; margin-bottom: 8px; font-size: 1.5rem; color: var(--hover-color); }
+        p.subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; line-height: 1.5; }
 
-        p.subtitle {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
+        .form-row { display: flex; gap: 16px; margin-bottom: 16px; }
+        .form-group { flex: 1; margin-bottom: 16px; }
+        .form-row .form-group { margin-bottom: 0; }
 
-        .form-row {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
-        .form-group {
-            flex: 1;
-            margin-bottom: 16px;
-        }
-
-        .form-row .form-group {
-            margin-bottom: 0; 
-        }
-
-        label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 6px;
-            color: var(--text-main);
-        }
+        label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 6px; }
 
         select, input[type="text"] {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            background-color: #fff;
-            color: var(--text-main);
-            outline: none;
-            transition: border-color 0.2s;
-            box-sizing: border-box;
+            width: 100%; padding: 10px 12px; border: 1px solid var(--border-color);
+            border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+            background-color: #fff; color: var(--text-main); outline: none; transition: 0.2s;
         }
+        select:focus, input[type="text"]:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0, 143, 179, 0.15); }
+        
+        optgroup { font-weight: 600; color: var(--hover-color); }
+        option { font-weight: 400; color: var(--text-main); }
 
-        select:focus, input[type="text"]:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
+        .custom-input { display: none; margin-top: 8px; background-color: #f0fdfa; border-color: var(--primary-color); }
 
-        .custom-input {
-            display: none;
-            margin-top: 8px;
-            border-color: var(--primary-color);
-            background-color: #f0fdfa; 
-        }
+        .color-group { background-color: #f1f5f9; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 16px; margin-bottom: 16px; }
+        .three-colors-container { display: none; gap: 16px; margin-top: 16px; background-color: #fff; padding: 16px; border-radius: 6px; border: 1px solid var(--border-color); }
+        .color-picker-item { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; text-align: center; }
+        .color-picker-item span { font-size: 0.8rem; font-weight: 600; }
+        .color-picker-item small { font-size: 0.75rem; color: var(--text-muted); font-family: monospace; }
+        
+        input[type="color"] { appearance: none; -moz-appearance: none; -webkit-appearance: none; background: none; border: 0; cursor: pointer; height: 45px; width: 70px; padding: 0; border-radius: 4px; }
+        input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+        input[type="color"]::-webkit-color-swatch { border: 2px solid var(--border-color); border-radius: 4px; }
 
-        .color-group {
-            background-color: #f1f5f9;
-            padding: 16px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 16px;
-            margin-top: 16px;
-        }
+        .button-group { display: flex; gap: 12px; margin-top: 24px; margin-bottom: 20px; }
+        button { flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Inter', sans-serif; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .btn-primary { background-color: var(--primary-color); color: white; flex: 2; }
+        .btn-primary:hover { background-color: var(--hover-color); }
+        .btn-secondary { background-color: #f1f5f9; border: 1px solid var(--border-color); flex: 1.5; }
+        .btn-secondary:hover { background-color: #e2e8f0; }
+        .btn-danger { background-color: #fff; color: var(--danger-color); border: 1px solid var(--danger-color); flex: 1; }
+        .btn-danger:hover { background-color: #fdf2f8; color: var(--danger-hover); border-color: var(--danger-hover); }
 
-        .three-colors-container {
-            display: none; 
-            gap: 16px;
-            margin-top: 16px;
-            background-color: #fff;
-            padding: 16px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-        }
-
-        .color-picker-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            flex: 1;
-            text-align: center;
-        }
-
-        .color-picker-item span {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .color-picker-item small {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-family: monospace;
-        }
-
-        input[type="color"] {
-            appearance: none;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            background: none;
-            border: 0;
-            cursor: pointer;
-            height: 45px;
-            width: 70px;
-            padding: 0;
-            border-radius: 4px;
-        }
-
-        input[type="color"]::-webkit-color-swatch-wrapper {
-            padding: 0;
-        }
-
-        input[type="color"]::-webkit-color-swatch {
-            border: 2px solid var(--border-color);
-            border-radius: 4px;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 12px;
-            margin-top: 24px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            flex: 2;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--hover-color);
-        }
-
-        .btn-secondary {
-            background-color: #f1f5f9;
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            flex: 1.5;
-        }
-
-        .btn-secondary:hover {
-            background-color: #e2e8f0;
-        }
-
-        .btn-danger {
-            background-color: #fff;
-            color: var(--danger-color);
-            border: 1px solid var(--danger-color);
-            flex: 1;
-        }
-
-        .btn-danger:hover {
-            background-color: #fef2f2;
-        }
-
-        textarea {
-            width: 100%;
-            height: 120px;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            resize: vertical;
-            background-color: #f8fafc;
-            line-height: 1.5;
-            box-sizing: border-box;
-        }
+        textarea { width: 100%; height: 120px; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; font-family: 'Inter', sans-serif; resize: vertical; background-color: #f8fafc; line-height: 1.5; box-sizing: border-box; }
     </style>
 </head>
 <body>
 
     <div class="generator-card">
-        <h2>LS Style AI Prompt Generator</h2>
-        <p class="subtitle">Formula: Scene &rarr; Character &rarr; Action &rarr; Style &rarr; Mood &rarr; Lighting &rarr; Quality &rarr; BG Mode &rarr; Brand Color</p>
+        <h2>Labor Solutions AI Prompt Generator (SASMLCQ+C)</h2>
+        <p class="subtitle">Formula: Scene &rarr; Character &rarr; Action &rarr; Style &rarr; Mood &rarr; Lighting/Comp &rarr; Quality &rarr; BG &rarr; Color</p>
 
         <div class="form-row">
             <div class="form-group">
                 <label for="scene">Scene</label>
                 <select id="scene" onchange="toggleCustomInput('scene')">
                     <option value="">-- Select Scene --</option>
-                    <option value="modern packaging manufacturing factory floor">Modern manufacturing factory floor</option>
-                    <option value="bright corporate office and breakroom">Bright corporate office and breakroom</option>
-                    <option value="collaborative HR meeting room">Collaborative HR meeting room</option>
-                    <option value="safe and ergonomic industrial workspace">Safe industrial workspace</option>
-                    <option value="custom" style="font-weight: bold;">-- Type Your Own --</option>
+                    <optgroup label="🏭 Industrial & Manufacturing">
+                        <option value="modern packaging manufacturing factory floor">Modern manufacturing factory floor</option>
+                        <option value="clean industrial warehouse with high racking systems">Clean industrial warehouse with high racks</option>
+                        <option value="high-tech control room with multiple digital monitors">High-tech control room with monitors</option>
+                        <option value="active loading dock with logistics equipment">Active loading dock / Logistics area</option>
+                    </optgroup>
+                    <optgroup label="🏢 Corporate & Office">
+                        <option value="bright open-plan corporate office">Bright open-plan corporate office</option>
+                        <option value="collaborative glass-walled boardroom">Glass-walled boardroom / Meeting room</option>
+                        <option value="comfortable employee breakroom and cafeteria">Employee breakroom / Cafeteria</option>
+                        <option value="modern corporate reception area">Modern corporate reception area</option>
+                    </optgroup>
+                    <optgroup label="💻 Remote & Specialized">
+                        <option value="cozy and ergonomic home office setup">Ergonomic home office setup</option>
+                        <option value="secure IT server room with blinking lights">Secure IT server room</option>
+                        <option value="abstract clean digital workspace environment">Abstract digital / Conceptual workspace</option>
+                    </optgroup>
+                    <option value="custom" style="font-weight: bold;">+ Type Your Own</option>
                 </select>
-                <input type="text" id="scene_custom" class="custom-input" placeholder="Type specific scene...">
+                <input type="text" id="scene_custom" class="custom-input" placeholder="e.g., bustling city street outside the office...">
             </div>
             
             <div class="form-group">
                 <label for="character">Character</label>
                 <select id="character" onchange="toggleCustomInput('character')">
                     <option value="">-- Select Character --</option>
-                    <option value="diverse group of factory workers in safety uniforms">Factory Workers (Diverse Group)</option>
-                    <option value="focused machine operator">Machine Operator (Individual)</option>
-                    <option value="approachable line supervisor holding a tablet">Line Supervisor (With Tablet)</option>
-                    <option value="professional corporate manager in business casual">Corporate Manager (Business Casual)</option>
-                    <option value="manager and worker interacting positively">Manager & Worker (Interacting)</option>
-                    <option value="IT or tech professional in a server room or modern tech desk">IT/Tech Professional (Server Room/Desk)</option>
-                    <option value="customer service representative with headset, friendly expression">Customer Service Rep (With Headset)</option>
-                    <option value="inclusive corporate environment featuring a professional using a wheelchair">Inclusive Professional (Using Wheelchair)</option>
-                    <option value="custom" style="font-weight: bold;">-- Type Your Own --</option>
+                    <optgroup label="👷 Operations & Field">
+                        <option value="diverse group of factory workers in high-vis safety uniforms and hardhats">Factory Workers (Group, High-Vis & Hardhats)</option>
+                        <option value="focused machine operator wearing safety goggles">Machine Operator (With Safety Goggles)</option>
+                        <option value="approachable line supervisor holding a digital tablet">Line Supervisor (With Tablet)</option>
+                        <option value="logistics worker driving a forklift">Logistics Worker (Operating Forklift)</option>
+                    </optgroup>
+                    <optgroup label="👔 Leadership & Office">
+                        <option value="professional corporate manager in business casual attire">Corporate Manager (Business Casual)</option>
+                        <option value="executive giving a presentation in a sharp suit">Executive / Leader (In Suit)</option>
+                        <option value="customer service representative with a headset, smiling">Customer Service Rep (With Headset)</option>
+                        <option value="IT or tech professional focused on a laptop">IT / Tech Professional (With Laptop)</option>
+                    </optgroup>
+                    <optgroup label="🤝 Diversity & Inclusion">
+                        <option value="inclusive corporate environment featuring a professional using a wheelchair">Professional using a wheelchair</option>
+                        <option value="multigenerational team of employees collaborating">Multigenerational team (Mixed ages)</option>
+                        <option value="diverse mix of international employees">Diverse international team</option>
+                    </optgroup>
+                    <option value="custom" style="font-weight: bold;">+ Type Your Own</option>
                 </select>
-                <input type="text" id="character_custom" class="custom-input" placeholder="Type specific character...">
+                <input type="text" id="character_custom" class="custom-input" placeholder="e.g., a young female engineer pointing at a blueprint...">
             </div>
         </div>
 
@@ -272,54 +146,77 @@
             <label for="action">Action / Topic</label>
             <select id="action" onchange="toggleCustomInput('action')">
                 <option value="">-- Select Action --</option>
-                <optgroup label="Human Rights & Employment">
+                <optgroup label="⚖️ Compliance, Ethics & HR">
                     <option value="discussing fair compensation and decent work practices openly">Discussing fair compensation & decent work</option>
                     <option value="reviewing compliance and accessing a secure whistleblowing channel on a computer">Accessing a secure whistleblowing channel</option>
+                    <option value="signing a transparent and ethical employment contract">Signing an ethical employment contract</option>
+                    <option value="conducting a fair and unbiased performance review">Conducting an unbiased performance review</option>
                 </optgroup>
-                <optgroup label="Effective Communication">
-                    <option value="delivering an engaging presentation">Presentation</option>
-                    <option value="practicing active listening during a one-on-one feedback session">Active listening & 1-on-1 feedback session</option>
+                <optgroup label="🗣️ Communication & Leadership">
+                    <option value="delivering an engaging presentation on building influence through voice">Presenting on building influence through voice</option>
+                    <option value="practicing active listening during a one-on-one feedback session">Active listening in a 1-on-1 feedback session</option>
+                    <option value="resolving workplace conflict calmly and professionally">Resolving conflict calmly and professionally</option>
+                    <option value="leading a dynamic brainstorming session at a whiteboard">Leading a brainstorming session at a whiteboard</option>
                 </optgroup>
-                <optgroup label="Wellbeing">
+                <optgroup label="🛡️ Safety & Technical Skills">
+                    <option value="demonstrating proper lifting techniques to prevent injury">Demonstrating proper ergonomic lifting</option>
+                    <option value="identifying and reporting a workplace hazard">Identifying and reporting a workplace hazard</option>
+                    <option value="analyzing complex data charts on a dual-monitor setup">Analyzing data charts on monitors</option>
+                    <option value="inspecting product quality on the manufacturing line">Inspecting product quality on the line</option>
+                </optgroup>
+                <optgroup label="🌱 Wellbeing & Financial">
                     <option value="taking a mindful mental health break in a comfortable lounge">Taking a mental health break in a lounge</option>
-                    <option value="practicing workplace ergonomics and gentle stretching">Practicing workplace ergonomics & stretching</option>
+                    <option value="practicing workplace ergonomics and gentle stretching">Practicing workplace desk stretching</option>
+                    <option value="reviewing a transparent financial compensation and benefits dashboard">Reviewing financial/benefits dashboard</option>
                 </optgroup>
-                <optgroup label="Financial">
-                    <option value="reviewing a transparent financial compensation and benefits dashboard">Reviewing financial compensation dashboard</option>
-                    <option value="attending a financial literacy and retirement planning workshop">Attending a financial literacy workshop</option>
-                </optgroup>
-                <option value="custom" style="font-weight: bold;">-- Type Your Own --</option>
+                <option value="custom" style="font-weight: bold;">+ Type Your Own</option>
             </select>
-            <input type="text" id="action_custom" class="custom-input" placeholder="Type specific action...">
+            <input type="text" id="action_custom" class="custom-input" placeholder="e.g., shaking hands after a successful negotiation...">
         </div>
 
         <div class="form-row">
             <div class="form-group">
-                <label for="style">Style</label>
+                <label for="style">Visual Style</label>
                 <select id="style" onchange="toggleCustomInput('style')">
                     <option value="">-- Select Style --</option>
-                    <option value="clean flat corporate vector illustration, faceless characters, simplified geometric shapes, no strokes, no outlines">Clean Flat Corporate Vector (Faceless, No Stroke)</option>
-                    <option value="clean corporate flat vector illustration with solid geometric shapes and clear lineart">Clean Corporate Flat Vector (With Lineart)</option>
-                    <option value="modern 3D isometric render, smooth textures">Modern 3D isometric render</option>
-                    <option value="realistic high-end corporate photography">Realistic high-end corporate photography</option>
-                    <option value="2.5D modern tech illustration, semi-isometric, clean ui/ux aesthetic">2.5D Modern Tech / UI Illustration</option>
-                    <option value="stylized corporate infographic aesthetic, data visualization style, minimal elements">Corporate Infographic / Data Viz Style</option>
-                    <option value="custom" style="font-weight: bold;">-- Type Your Own --</option>
+                    <optgroup label="🎨 Vector & Illustration">
+                        <option value="clean flat corporate vector illustration, faceless characters, simplified geometric shapes, no strokes, no outlines">Flat Vector: Faceless, No Stroke (Minimalist UI)</option>
+                        <option value="clean corporate flat vector illustration with solid geometric shapes and clear crisp lineart">Flat Vector: With crisp lineart/strokes</option>
+                        <option value="stylized corporate infographic aesthetic, data visualization style, minimal elements">Infographic / Data Viz Style (Shapes & lines)</option>
+                        <option value="modern editorial watercolor illustration, soft corporate style">Editorial Watercolor (Soft & Artistic)</option>
+                    </optgroup>
+                    <optgroup label="🧊 3D & Isometric">
+                        <option value="modern 3D isometric render, smooth matte textures, soft UI aesthetic">3D Isometric: Smooth matte textures</option>
+                        <option value="2.5D modern tech illustration, semi-isometric, clean ui/ux aesthetic">2.5D Tech Illustration (Modern UI/UX)</option>
+                        <option value="trendy 3D claymation style corporate illustration, soft lighting">3D Clay Style (Trendy, soft rounded shapes)</option>
+                    </optgroup>
+                    <optgroup label="📸 Photography & Realism">
+                        <option value="realistic high-end corporate photography, candid documentary style">Photography: High-end, candid documentary</option>
+                        <option value="hyper-realistic cinematic corporate photography, depth of field">Photography: Cinematic, dramatic depth of field</option>
+                    </optgroup>
+                    <option value="custom" style="font-weight: bold;">+ Type Your Own</option>
                 </select>
-                <input type="text" id="style_custom" class="custom-input" placeholder="Type specific visual style...">
+                <input type="text" id="style_custom" class="custom-input" placeholder="e.g., pop art comic book style...">
             </div>
+            
             <div class="form-group">
-                <label for="mood">Mood</label>
+                <label for="mood">Mood / Atmosphere</label>
                 <select id="mood" onchange="toggleCustomInput('mood')">
                     <option value="">-- Select Mood --</option>
-                    <option value="empathetic, supportive, and psychologically safe atmosphere">Emppathetic, supportive, psychologically safe</option>
-                    <option value="energetic yet trustworthy training atmosphere">Energetic & trustworthy</option>
-                    <option value="transparent, ethical, and professional">Transparent, ethical, professional</option>
-                    <option value="serious, urgent, and cautionary atmosphere">Serious, urgent, and cautionary (Safety/Warning)</option>
-                    <option value="focused, analytical, and data-driven environment">Focused, analytical, and data-driven</option>
-                    <option value="custom" style="font-weight: bold;">-- Type Your Own --</option>
+                    <optgroup label="🟢 Positive & Constructive">
+                        <option value="empathetic, supportive, and psychologically safe atmosphere">Empathetic, supportive, psychologically safe</option>
+                        <option value="energetic, inspiring, and trustworthy training atmosphere">Energetic, inspiring, trustworthy</option>
+                        <option value="calm, focused, and highly productive environment">Calm, focused, highly productive</option>
+                        <option value="transparent, ethical, and professional tone">Transparent, ethical, professional</option>
+                    </optgroup>
+                    <optgroup label="🔴 Serious & Investigative">
+                        <option value="serious, urgent, and cautionary atmosphere">Serious, urgent, cautionary (For hazards)</option>
+                        <option value="analytical, data-driven, and highly regulated mood">Analytical, highly regulated, strict</option>
+                        <option value="tense but professional conflict resolution mood">Tense but professional (Conflict resolution)</option>
+                    </optgroup>
+                    <option value="custom" style="font-weight: bold;">+ Type Your Own</option>
                 </select>
-                <input type="text" id="mood_custom" class="custom-input" placeholder="Type specific mood...">
+                <input type="text" id="mood_custom" class="custom-input" placeholder="e.g., futuristic and highly innovative...">
             </div>
         </div>
 
@@ -327,24 +224,40 @@
             <div class="form-group">
                 <label for="lighting">Lighting & Composition</label>
                 <select id="lighting" onchange="toggleCustomInput('lighting')">
-                    <option value="">-- Select Lighting/Comp --</option>
-                    <option value="soft directional lighting, wide angle group composition">Soft directional lighting, wide angle</option>
-                    <option value="bright natural daylight, eye-level medium shot">Bright natural daylight, eye-level</option>
-                    <option value="over-the-shoulder shot, looking at a digital screen or document, soft depth of field">POV / Over-the-shoulder shot (Looking at screen/document)</option>
-                    <option value="extreme close-up macro shot on hands performing a specific task, dramatic focused lighting">Extreme close-up macro (Hands performing task)</option>
-                    <option value="custom" style="font-weight: bold;">-- Type Your Own --</option>
+                    <option value="">-- Select Camera/Lighting --</option>
+                    <optgroup label="🎥 Composition (Camera Angle)">
+                        <option value="wide angle group composition, showing the full environment">Wide angle (Shows full environment & group)</option>
+                        <option value="eye-level medium shot, centered subject engaging with the task">Medium shot (Eye-level, focused on subject)</option>
+                        <option value="over-the-shoulder shot, looking at a digital screen or document, soft depth of field">Over-the-shoulder / POV (Looking at screen/task)</option>
+                        <option value="extreme close-up macro shot on hands performing a specific task">Extreme Close-up / Macro (Focus on hands/details)</option>
+                        <option value="top-down bird's eye view flat lay perspective">Top-down / Bird's eye view</option>
+                    </optgroup>
+                    <optgroup label="💡 Lighting Setups">
+                        <option value="bright natural daylight streaming through large windows">Bright natural daylight</option>
+                        <option value="soft directional studio lighting creating subtle depth">Soft directional studio lighting</option>
+                        <option value="dramatic focused spotlighting, high contrast">Dramatic spotlighting (High contrast/Serious)</option>
+                        <option value="clean, even, flat lighting with no harsh shadows">Clean, flat, even lighting (Best for flat vectors)</option>
+                    </optgroup>
+                    <option value="custom" style="font-weight: bold;">+ Type Your Own</option>
                 </select>
-                <input type="text" id="lighting_custom" class="custom-input" placeholder="Type specific lighting or composition...">
+                <input type="text" id="lighting_custom" class="custom-input" placeholder="e.g., neon cyberpunk lighting, low angle shot...">
             </div>
+            
             <div class="form-group">
-                <label for="quality">Quality</label>
+                <label for="quality">Render Quality</label>
                 <select id="quality" onchange="toggleCustomInput('quality')">
                     <option value="">-- Select Quality --</option>
-                    <option value="smooth premium high quality vector finish, masterpiece">Premium Vector Masterpiece</option>
-                    <option value="8k resolution, photorealistic, highly detailed, ultra-sharp">8K Resolution, Ultra-sharp Photography</option>
-                    <option value="custom" style="font-weight: bold;">-- Type Your Own --</option>
+                    <optgroup label="✏️ For Illustrations & Vectors">
+                        <option value="smooth premium high quality vector finish, masterpiece, dribbble style">Premium Vector Masterpiece (Dribbble style)</option>
+                        <option value="crisp vector lines, perfectly balanced composition, 4k resolution">Crisp vector lines, balanced composition</option>
+                    </optgroup>
+                    <optgroup label="📷 For 3D & Photography">
+                        <option value="8k resolution, photorealistic, highly detailed, ultra-sharp focus">8K Photorealistic, highly detailed</option>
+                        <option value="rendered in Unreal Engine 5, octane render, global illumination, highly polished">Unreal Engine / Octane Render (High-end 3D)</option>
+                    </optgroup>
+                    <option value="custom" style="font-weight: bold;">+ Type Your Own</option>
                 </select>
-                <input type="text" id="quality_custom" class="custom-input" placeholder="Type specific quality modifiers...">
+                <input type="text" id="quality_custom" class="custom-input" placeholder="e.g., award winning National Geographic photography...">
             </div>
         </div>
 
@@ -352,17 +265,18 @@
             <label for="bgMode">Background Mode</label>
             <select id="bgMode">
                 <option value="">-- Integrated with Scene (Default) --</option>
-                <option value="integrated background scenery predominantly using light hex color #E0F0FE">Light Mode (Light Ambient Background #E0F0FE)</option>
-                <option value="atmospheric background environment predominantly using dark hex color #004050">Dark Mode (Dark Ambient Background #004050)</option>
-                <option value="isolated on a pure white background for easy transparent cutout">Transparent (Pure White Background for Cutout)</option>
+                <option value="integrated background scenery predominantly using light hex color #E0F0FE">Light Ambient Background (Tinted #E0F0FE)</option>
+                <option value="atmospheric background environment predominantly using dark hex color #004050">Dark Ambient Background (Tinted #004050)</option>
+                <option value="isolated on a pure white background for easy transparent cutout">Pure White Background (For easy cutout/transparency)</option>
+                <option value="isolated on a pure solid black background">Pure Black Background</option>
             </select>
         </div>
 
         <div class="color-group">
-            <label for="presetColor">Brand Color</label>
+            <label for="presetColor">Brand Colors (For UI, Clothing, Accents)</label>
             <select id="presetColor" onchange="toggleColorPicker()">
                 <option value="">-- No Color Preset --</option>
-                <option value="incorporating a specific brand color palette utilizing hex codes #21BEE5 as primary, #2196F3 as secondary, and #FA005F as accent color">LS Brand Color (Cyan, Blue, Magenta)</option>
+                <option value="incorporating a specific brand color palette utilizing hex codes #21BEE5 as primary, #2196F3 as secondary, and #FA005F as accent color">Labor Solutions Brand (Cyan, Blue, Magenta)</option>
                 <option value="custom_3" style="font-weight: bold; color: var(--primary-color);">+ Choose 3 Custom Brand Colors</option>
             </select>
             
